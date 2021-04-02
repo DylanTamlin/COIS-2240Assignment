@@ -1,0 +1,21 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TabPane?>
+
+<GridPane fx:controller="sample.Controller"
+          xmlns:fx="http://javafx.com/fxml"
+          alignment="CENTER"
+          hgap="10"
+          vgap="50"
+          fx:id="Rootgrid">
+
+    <Button text="Login" GridPane.columnIndex="0" GridPane.rowIndex="0" onAction="#gotoLogin"/>
+    <Button text="Register" GridPane.columnIndex="0" GridPane.rowIndex="1" onAction="#gotoRegister"/>
+    <Button text="Quit" GridPane.columnIndex="0" GridPane.rowIndex="3" onAction="#exit"/>
+
+
+</GridPane>
+
