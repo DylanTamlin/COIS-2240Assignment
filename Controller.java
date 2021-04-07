@@ -20,27 +20,37 @@ public class Controller {
 
 
     public void gotoLogin(ActionEvent actionEvent) throws IOException {
-
-        //Using the window to get the stage
+        //Using the window to get the stage and closing previous file and  loading the next fxml file
         Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
         stage.close();
         Helper.LoadScene("Login.fxml");
     }
 
     public void gotoRegister(ActionEvent actionEvent) throws IOException {
-        //Using the window to get the stage
+        //Using the window to get the stage and closing previous file and  loading the next fxml file
         Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
         stage.close();
         Helper.LoadScene("Register.fxml");
     }
 
     public void GotoRoot(ActionEvent actionEvent) throws IOException {
+        //Using the window to get the stage and closing previous file and  loading the next fxml file
         Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
         stage.close();
         Helper.LoadScene("Root.fxml");
     }
 
+    public void GotoMain(ActionEvent actionEvent) throws IOException {
+        //Using the window to get the stage and closing previous file and  loading the next fxml file
+        Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.close();
+        Helper.LoadScene("Main.fxml");
+    }
+
     public void exit(ActionEvent actionEvent) {
+        //Exiting from the program
         Platform.exit();
     }
+
+
 }

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="CENTER" hgap="10" prefHeight="1000" prefWidth="1000"
+          vgap="10" xmlns="http://javafx.com/javafx/11.0.1"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="sample.Controller">
+
+   <TableView>
+
+    <columns>
+       <TableColumn prefWidth="150" text="Website Name" />
+
+        <TableColumn prefWidth="150" text="Username" />
+
+        <TableColumn prefWidth="151.0" text="Password" />
+
+    </columns>
+
+   </TableView>
+    <Text text="Store New Password" GridPane.rowIndex="2">
+        <font>
+            <Font size="25"/>
+        </font>
+    </Text>
+
+    <TextField prefHeight="32.0" prefWidth="452.0" text="Website" GridPane.rowIndex="3" />
+
+    <TextField prefWidth="10" text="Username" GridPane.rowIndex="5" />
+
+    <PasswordField prefWidth="10" text="password" GridPane.rowIndex="6" />
+
+    <Button text="Store Password" GridPane.rowIndex="7" />
+    <Button text="Edit" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <Button text="Delete" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+    <Button text="Back" GridPane.columnIndex="1" GridPane.rowIndex="6" onAction="#GotoRoot"/>
+
+
+
+
+</GridPane>

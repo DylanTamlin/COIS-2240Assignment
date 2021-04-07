@@ -15,7 +15,6 @@
           vgap="50"
           alignment="CENTER">
 
-
     <Text text="Login" GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.columnSpan="1" >
         <font>
             <Font size="50" />
@@ -25,7 +24,7 @@
     <TextField text="Username" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
     <PasswordField text="Password" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
 
-    <Button text="Login" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+    <Button text="Login" GridPane.rowIndex="1" GridPane.columnIndex="3" onAction="#GotoMain"/>
     <Button text="Back" GridPane.rowIndex="2" GridPane.columnIndex="1" onAction="#GotoRoot"/>
 
 </GridPane>

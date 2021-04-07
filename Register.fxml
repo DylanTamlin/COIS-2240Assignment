@@ -25,7 +25,7 @@
     <TextField text="Username" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
     <PasswordField text="Password" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
 
-    <Button text="Login" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+    <Button text="Register" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
     <Button text="Back" GridPane.rowIndex="2" GridPane.columnIndex="1" onAction="#GotoRoot"/>
 
 </GridPane>

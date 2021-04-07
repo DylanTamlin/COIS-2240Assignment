@@ -12,10 +12,11 @@ import java.io.IOException;
 public class Helper   {
 
     public static void LoadScene(String fxml) throws IOException {
+        //Getting the parent file and stage then switching fxml files
         Stage primaryStage = new Stage();
         Parent Login = FXMLLoader.load(Helper.class.getResource(fxml));
         primaryStage.setTitle("Password Manager");
-        primaryStage.setScene(new Scene(Login, 500, 500));
+        primaryStage.setScene(new Scene(Login, 550, 550));
         primaryStage.show();
 
     }
