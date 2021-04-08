@@ -1,39 +1,46 @@
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Main {
 
   public static void main(String[] args) throws SQLException {
 
-      Database db = new Database();
 
-      String[] keys = new String[3];
-    keys[0] = "key";
-    keys[1] = "value";
-    keys[2] = "end";
+    Database db = new Database();
 
-    String[] values= new String[3];
+    String password = "password";
 
-    values[0] = "1";
-    values[1] = "asd";
-    values[2] = "qwer";
+    ResultSet set = db.select("users", new String[]{"username", "password"}, new String[]{"username"} , new String[]{"Jane Doe"}, "AND", new String[]{"="});
+//    db.update("users", new String[]{"password"}, new String[]{hashPassword("password")}, new String[]{"username"}, new String[] {"Jane Doe"}, "AND", new String[]{"="});
 
 
-    db.insert("users", keys, values);
+    if(set.next()){
 
-    System.out.println(hashPassword("vildan"));
+      String dbPass = set.getString("password");
+
+      String hashPass = hashPassword(password);
+
+      if(dbPass.equals(hashPass)){
+        System.out.println("Loggin in");
+        System.out.println("dbPass "+ dbPass + "\n" + "hashPass " + hashPassword(password));
+        System.out.println("Invalid Credentials");
+      }else{
+        System.out.println("dbPass "+ dbPass + "\n" + "hashPass " + hashPassword(password));
+        System.out.println("Invalid Credentials");
+      }
+    }else{
+      System.out.println("Invalid Credentials");
+    }
+
+
 
   }
 
 
-  /*
-  *
-  *
-  * hash password MD5
-  *
-  *
-  * */
+
+
 
   public static String hashPassword(String password) {
 
@@ -53,13 +60,12 @@ public class Main {
 
     for (byte b1 : b) {
 
-         sb.append(Integer.toHexString(b1 & 0xff).toString());
+      sb.append(Integer.toHexString(b1 & 0xff).toString());
 
     }
 
     return sb.toString(); //Return the hashed password
   }
-
 
 }
 
