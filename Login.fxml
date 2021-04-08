@@ -21,11 +21,11 @@
         </font>
     </Text>
 
-    <TextField text="Username" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-    <PasswordField text="Password" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+    <TextField text="Username" GridPane.rowIndex="1" GridPane.columnIndex="1" fx:id="LoginUsername"/>
+    <PasswordField text="Password" GridPane.rowIndex="1" GridPane.columnIndex="2" fx:id="LoginPassword"/>
 
-    <Button text="Login" GridPane.rowIndex="1" GridPane.columnIndex="3" onAction="#GotoMain"/>
-    <Button text="Back" GridPane.rowIndex="2" GridPane.columnIndex="1" onAction="#GotoRoot"/>
+    <Button text="Login" GridPane.rowIndex="1" GridPane.columnIndex="3" onAction="#GotoMain" fx:id="LoginLogin"/>
+    <Button text="Back" GridPane.rowIndex="2" GridPane.columnIndex="1" onAction="#GotoRoot" fx:id="LoginBack"/>
 
 </GridPane>
 

@@ -11,11 +11,11 @@
    <TableView>
 
     <columns>
-       <TableColumn prefWidth="150" text="Website Name" />
+       <TableColumn prefWidth="150" text="Website Name" fx:id="WebName"/>
 
-        <TableColumn prefWidth="150" text="Username" />
+        <TableColumn prefWidth="150" text="Username" fx:id="Username"/>
 
-        <TableColumn prefWidth="151.0" text="Password" />
+        <TableColumn prefWidth="151.0" text="Password" fx:id="Password"/>
 
     </columns>
 
@@ -26,16 +26,16 @@
         </font>
     </Text>
 
-    <TextField prefHeight="32.0" prefWidth="452.0" text="Website" GridPane.rowIndex="3" />
+    <TextField prefHeight="32.0" prefWidth="452.0" text="Website" GridPane.rowIndex="3" fx:id="MainWebsite"/>
 
-    <TextField prefWidth="10" text="Username" GridPane.rowIndex="5" />
+    <TextField prefWidth="10" text="Username" GridPane.rowIndex="5" fx:id="MainUsername"/>
 
-    <PasswordField prefWidth="10" text="password" GridPane.rowIndex="6" />
+    <PasswordField prefWidth="10" text="password" GridPane.rowIndex="6" fx:id="MainPassword"/>
 
-    <Button text="Store Password" GridPane.rowIndex="7" />
-    <Button text="Edit" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-    <Button text="Delete" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-    <Button text="Back" GridPane.columnIndex="1" GridPane.rowIndex="6" onAction="#GotoRoot"/>
+    <Button text="Store Password" GridPane.rowIndex="7" fx:id="MainStore"/>
+    <Button text="Edit" GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="MainEdit"/>
+    <Button text="Delete" GridPane.columnIndex="1" GridPane.rowIndex="5" fx:id="MainDelete"/>
+    <Button text="Back" GridPane.columnIndex="1" GridPane.rowIndex="6" onAction="#GotoRoot" fx:id="MainBack"/>
 
 
 
