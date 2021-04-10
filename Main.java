@@ -1,74 +1,31 @@
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import javax.xml.crypto.Data;
+import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Main {
+public class Main extends Application {
 
-  public static void main(String[] args) throws SQLException {
+    @Override
+    public void start(Stage primaryStage) throws Exception{
 
+       URL some = getClass().getResource("/Root.fxml");
 
-    Database db = new Database();
-
-    String password = "password";
-
-    ResultSet set = db.select("users", new String[]{"username", "password"}, new String[]{"username"} , new String[]{"Jane Doe"}, "AND", new String[]{"="});
-//    db.update("users", new String[]{"password"}, new String[]{hashPassword("password")}, new String[]{"username"}, new String[] {"Jane Doe"}, "AND", new String[]{"="});
-
-
-    if(set.next()){
-
-      String dbPass = set.getString("password");
-
-      String hashPass = hashPassword(password);
-
-      if(dbPass.equals(hashPass)){
-        System.out.println("Loggin in");
-        System.out.println("dbPass "+ dbPass + "\n" + "hashPass " + hashPassword(password));
-        System.out.println("Invalid Credentials");
-      }else{
-        System.out.println("dbPass "+ dbPass + "\n" + "hashPass " + hashPassword(password));
-        System.out.println("Invalid Credentials");
-      }
-    }else{
-      System.out.println("Invalid Credentials");
+        Parent root = FXMLLoader.load(getClass().getResource("/Root.fxml"));
+        primaryStage.setTitle("Password Manager");
+        primaryStage.setScene(new Scene(root, 400, 400));
+        primaryStage.show();
     }
 
-
-
-  }
-
-
-
-
-
-  public static String hashPassword(String password) {
-
-    MessageDigest md = null;
-
-    try {
-      md = MessageDigest.getInstance("MD5");
-    } catch (NoSuchAlgorithmException e) {
-      e.printStackTrace();
+    public static void main(String[] args) throws SQLException {
+      launch(args);
     }
 
-    md.update(password.getBytes());
-
-    byte[] b = md.digest();
-
-    StringBuffer sb = new StringBuffer();
-
-    for (byte b1 : b) {
-
-      sb.append(Integer.toHexString(b1 & 0xff).toString());
-
-    }
-
-    return sb.toString(); //Return the hashed password
-  }
 
 }
-
-
-
-

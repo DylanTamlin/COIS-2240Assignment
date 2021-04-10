@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import Models.Website?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import Models.Person?>
+<GridPane alignment="CENTER" hgap="10" prefHeight="1000" prefWidth="1000"
+          vgap="10" xmlns="http://javafx.com/javafx/11.0.1"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="Controller">
+
+   <TableView fx:id="tableView">
+
+    <columns>
+        <TableColumn text="Username">
+            <cellValueFactory><PropertyValueFactory property="username" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn text="Website Name">
+            <cellValueFactory><PropertyValueFactory property="websiteName" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn text="Password">
+            <cellValueFactory><PropertyValueFactory property="password" />
+            </cellValueFactory>
+        </TableColumn>
+    </columns>
+       <items>
+           <FXCollections fx:factory="observableArrayList">
+           </FXCollections>
+       </items>
+   </TableView>
+    <Text text="Store New Password" GridPane.rowIndex="2">
+        <font>
+            <Font size="25"/>
+        </font>
+    </Text>
+
+    <TextField prefHeight="32.0" prefWidth="452.0" text="Website" GridPane.rowIndex="3" fx:id="MainWebsite"/>
+
+    <TextField prefWidth="10" text="Username" GridPane.rowIndex="5" fx:id="MainUsername"/>
+
+    <PasswordField prefWidth="10" text="password" GridPane.rowIndex="6" fx:id="MainPassword"/>
+
+    <Button text="Store Password" GridPane.rowIndex="7" onAction="#StorePassword" fx:id="MainStore"/>
+    <Button text="Edit" GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="MainEdit"/>
+    <Button text="Delete" GridPane.columnIndex="1" GridPane.rowIndex="5" fx:id="MainDelete"/>
+    <Button text="Back" GridPane.columnIndex="1" GridPane.rowIndex="6" onAction="#GotoRoot" fx:id="MainBack"/>
+
+
+
+
+</GridPane>

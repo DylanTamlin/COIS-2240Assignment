@@ -5,17 +5,24 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TabPane?>
 
-<GridPane fx:controller="sample.Controller"
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<GridPane fx:controller="Controller"
           xmlns:fx="http://javafx.com/fxml"
           alignment="CENTER"
           hgap="10"
           vgap="50"
           fx:id="Rootgrid">
 
-    <Button text="Login" GridPane.columnIndex="0" GridPane.rowIndex="0" onAction="#gotoLogin"/>
-    <Button text="Register" GridPane.columnIndex="0" GridPane.rowIndex="1" onAction="#gotoRegister"/>
-    <Button text="Quit" GridPane.columnIndex="0" GridPane.rowIndex="3" onAction="#exit"/>
+    <Text text="Password Manager" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="1" fx:id="RootTitle">
+        <font>
+            <Font size="35" />
+        </font>
+    </Text>
 
+    <Button text="Login" GridPane.columnIndex="0" GridPane.rowIndex="1" onAction="#gotoLogin" fx:id="RootLogin"/>
+    <Button text="Register" GridPane.columnIndex="0" GridPane.rowIndex="2" onAction="#gotoRegister" fx:id="RootRegister"/>
+    <Button text="Quit" GridPane.columnIndex="0" GridPane.rowIndex="4" onAction="#exit" fx:id="RootQuit"/>
 
 </GridPane>
 

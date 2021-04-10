@@ -4,15 +4,6 @@ import java.security.NoSuchAlgorithmException;
 
 // Delete this as well
 public class Hash {
-
-    // Delete this whenever
-    public static void main(String args[]) throws NoSuchAlgorithmException
-    {
-        //String password = "RiseOfSkywalkerIsG0od!";
-        //String password = "IenjoyStarTrek!";
-        //System.out.println(hashPass(password));
-    } // close main
-
     // This is the method header
     public static String hashPass(String password)
     {
